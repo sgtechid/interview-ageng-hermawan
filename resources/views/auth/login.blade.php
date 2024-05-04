@@ -62,6 +62,18 @@
                                 </div>
                             </div>
                             <div class="card-body">
+                                <x-auth-session-status class="mb-4" :status="session('status')" />
+
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li class="text-light">{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
                                 <form role="form" class="text-start" action="{{ route('login') }}" method="post">
                                     @csrf
                                     @method('post')

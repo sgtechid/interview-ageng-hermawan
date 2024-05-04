@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Third Party Services
@@ -21,6 +20,11 @@ return [
         'scheme' => 'https',
     ],
 
+    'freecurrencyapi' => [
+        'key' => env('FREECURRENCYAPI_KEY'),
+        'url_currency' => 'https://api.freecurrencyapi.com/v1/currencies',
+    ],
+
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
@@ -30,5 +34,4 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-
 ];
