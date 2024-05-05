@@ -5,9 +5,6 @@
     <a href="https://ageng.meepulm.com/">
         <img src="https://ageng.meepulm.com/assets/img/ss-login.png" alt="Logo">
     </a>
-</div>
-
-<div align="center">
     <h3 align="center">View Demo - Dashboard</h3>
     <a href="https://ageng.meepulm.com">
     </a>
@@ -119,12 +116,6 @@ php artisan migrate db:seed
 ```
 
 Untuk melakukan migrate table yang telah dibuat 14. Aplikasi Siap digunakan
-
-## Contact
-
--   Ageng Hermawan ( Backend Developer )
--   Project Link:
-    [https://github.com/agenghermawan/Capstone_TeamID_CSD-079.git](https://github.com/agenghermawan/Capstone_TeamID_CSD-079.git)
 
 ## User For Testing Role Admin & User
 
