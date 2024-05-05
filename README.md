@@ -6,6 +6,7 @@
         <img src="https://ageng.meepulm.com/assets/img/ss-login.png" alt="Logo">
     </a>
     <h3 align="center">View Demo - Dashboard at 'https://ageng.meepulm.com' </h3>
+    <p> Bisa di coba dengan credential yang disediakan tertera pada bawah dokumentasi ini </p>
 </div>
 
 <!-- ABOUT THE PROJECT -->
