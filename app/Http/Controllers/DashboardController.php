@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Http;
 
 class DashboardController extends Controller
 {
+    public $url_latest = 'https://api.freecurrencyapi.com/v1/latest?apikey=';
+
     public function index()
     {
         $data_currencies = [];
@@ -19,7 +21,7 @@ class DashboardController extends Controller
 
         $user_count = User::count();
 
-        $url_currency = 'https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_tDFskwXIw01tIOqCo0QKXrs0kBgHhL6amnVB0zNi&base_currency=' . 'IDR';
+        $url_currency = $this->url_latest . env('FREECURRENCYAPI_KEY') . '&base_currency=' . 'IDR';
 
         $response = Http::get($url_currency);
 
@@ -29,7 +31,8 @@ class DashboardController extends Controller
 
         $data_user = User::all();
 
-        $convert_currency = 'https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_tDFskwXIw01tIOqCo0QKXrs0kBgHhL6amnVB0zNi&currencies=' . 'IDR' . '&base_currency=' . 'USD';
+        $convert_currency = $this->url_latest . env('FREECURRENCYAPI_KEY') . '&currencies=IDR&base_currency=USD';
+
         $response = Http::get($convert_currency);
         if ($response->successful()) {
             $result_convert = $response->json();

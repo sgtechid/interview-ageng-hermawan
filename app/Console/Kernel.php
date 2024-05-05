@@ -12,7 +12,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('convert:cron')->everyFifteenSeconds();
+        $schedule->command('convert:cron')->cron('0 */12 * * *');
     }
 
     /**

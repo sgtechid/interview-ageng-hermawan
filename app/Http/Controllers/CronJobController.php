@@ -8,11 +8,13 @@ use Illuminate\Support\Facades\Http;
 
 class CronJobController extends Controller
 {
+    public $url_latest = 'https://api.freecurrencyapi.com/v1/latest?apikey=';
+
     public function index()
     {
         $result_convert = [];
 
-        $convert_currency = 'https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_tDFskwXIw01tIOqCo0QKXrs0kBgHhL6amnVB0zNi&currencies=' . 'IDR' . '&base_currency=' . 'USD';
+        $convert_currency = $this->url_latest . env('FREECURRENCYAPI_KEY') . '&currencies=' . 'IDR' . '&base_currency=' . 'USD';
 
         $response = Http::get($convert_currency);
 
@@ -41,7 +43,7 @@ class CronJobController extends Controller
 
     public function destroy(Request $request)
     {
-        Artisan::call('schedule:clear-cache');
+        Artisan::call('schedule:interrupt');
         return redirect()->back()->with('success', 'Cron Job telah dinonaktifkan');
     }
 }

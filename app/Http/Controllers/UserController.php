@@ -49,15 +49,13 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        // Validasi input
         $request->validate([
             'name' => 'required|min:4',
             'email' => 'email|unique:users,email,' . $id,
             'role' => 'required|in:admin,user',
-            'password' => 'nullable|min:6', // Password tidak wajib diisi pada saat update
+            'password' => 'nullable|min:6',
         ]);
 
-        // Perbarui data pengguna
         $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->email = $request->email;
@@ -67,7 +65,6 @@ class UserController extends Controller
         }
         $user->save();
 
-        // Redirect kembali dengan pesan sukses
         return redirect()->back()->with('success', 'User has been updated successfully.');
     }
 
