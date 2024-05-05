@@ -5,15 +5,12 @@
     <a href="https://ageng.meepulm.com/">
         <img src="https://ageng.meepulm.com/assets/img/ss-login.png" alt="Logo">
     </a>
-    <p align="center">
-        <br />
+</div>
 
-        <br />
-        <br />
-        <a href="https://ageng.meepulm.com/">View Demo</a>
-    <p> Bisa di coba dengan credential yang disediakan tertera pada bawah dokumentasi ini </p>
-    </p>
-
+<div align="center">
+    <h3 align="center">View Demo - Dashboard</h3>
+    <a href="https://ageng.meepulm.com">
+    </a>
 </div>
 
 <!-- ABOUT THE PROJECT -->
