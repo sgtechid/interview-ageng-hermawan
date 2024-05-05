@@ -53,7 +53,7 @@ https://getcomposer.org/
 2. PhpStrom
 ```
 
--   PHP 7.4
+-   PHP 8.1
 
 ```sh
 https://www.php.net/
