@@ -5,9 +5,7 @@
     <a href="https://ageng.meepulm.com/">
         <img src="https://ageng.meepulm.com/assets/img/ss-login.png" alt="Logo">
     </a>
-    <h3 align="center">View Demo - Dashboard</h3>
-    <a href="https://ageng.meepulm.com">
-    </a>
+    <h3 align="center">View Demo - Dashboard at 'https://ageng.meepulm.com' </h3>
 </div>
 
 <!-- ABOUT THE PROJECT -->
