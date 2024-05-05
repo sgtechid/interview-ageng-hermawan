@@ -1,6 +1,8 @@
 <x-app-layout>
     <div class="container-fluid py-4">
-        <a href="{{ route('user.management.create') }}" class="btn btn-primary"> Add new</a>
+        @if (Auth::user()->role == 'admin')
+            <a href="{{ route('user.management.create') }}" class="btn btn-primary"> Add new</a>
+        @endif
         @if (session('success'))
             <div class="alert alert-success">
                 <span class="text-light"> {{ session('success') }} </span>
@@ -30,7 +32,9 @@
                                         <th
                                             class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Employed</th>
-                                        <th class="text-secondary opacity-7"></th>
+                                        @if (Auth::user()->role == 'admin')
+                                            <th class="text-secondary opacity-7"></th>
+                                        @endif
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -61,23 +65,26 @@
                                                 <span
                                                     class="text-secondary text-xs font-weight-bold">{{ $item->created_at->format('d/m/Y') }}</span>
                                             </td>
-                                            <td class="align-middle ">
-                                                <form action="{{ route('user.management.delete', $item->id) }}"
-                                                    method="post">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <a href="{{ route('user.management.edit', $item->id) }}"
-                                                        class="text-secondary font-weight-bold text-xs"
-                                                        data-toggle="tooltip" data-original-title="Edit user">
-                                                        Edit
-                                                    </a>
-                                                    <button
-                                                        type="submit"class="text-secondary font-weight-bold text-xs border-0 bg-transparent"
-                                                        data-toggle="tooltip" data-original-title="Edit user">
-                                                        Delete
-                                                    </button>
-                                                </form>
-                                            </td>
+                                            @if (Auth::user()->role == 'admin')
+                                                <td class="align-middle ">
+                                                    <form action="{{ route('user.management.delete', $item->id) }}"
+                                                        method="post">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <a href="{{ route('user.management.edit', $item->id) }}"
+                                                            class="text-secondary font-weight-bold text-xs"
+                                                            data-toggle="tooltip" data-original-title="Edit user">
+                                                            Edit
+                                                        </a>
+                                                        <button
+                                                            type="submit"class="text-secondary font-weight-bold text-xs border-0 bg-transparent"
+                                                            data-toggle="tooltip" data-original-title="Edit user">
+                                                            Delete
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            @endif
+
                                         </tr>
                                     @endforeach
                                 </tbody>

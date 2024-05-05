@@ -27,15 +27,13 @@ class CurrencyConverter extends Command
      */
     public function handle()
     {
-        Log::info('Cron job Berhasil di jalankan');
+        $convert_currency = 'https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_tDFskwXIw01tIOqCo0QKXrs0kBgHhL6amnVB0zNi&currencies=' . 'IDR' . '&base_currency=' . 'USD';
 
-        // $convert_currency = 'https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_tDFskwXIw01tIOqCo0QKXrs0kBgHhL6amnVB0zNi&currencies=' . 'IDR' . '&base_currency=' . 'USD';
+        $response = Http::get($convert_currency);
 
-        // $response = Http::get($convert_currency);
-
-        // if ($response->successful()) {
-        //     $result_convert = $response->json();
-        //     Log::info('Cron job Berhasil di jalankan', $response['data'][0]);
-        // }
+        if ($response->successful()) {
+            $result_convert = $response->json();
+            Log::info('Cron job Berhasil di jalankan');
+        }
     }
 }

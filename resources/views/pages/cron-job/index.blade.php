@@ -1,7 +1,6 @@
 <x-app-layout>
     <div class="container-fluid py-4">
         <div class="row">
-
             <div class="col-12">
                 <div class="card my-4">
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
@@ -15,14 +14,14 @@
                                 <label class="form-label">Base Currency</label>
                                 <div class="input-group input-group-outline my-1">
                                     <input type="text" class="form-control" name="name" disabled
-                                        placeholder="IDR ">
+                                        placeholder="USD ">
                                 </div>
                             </div>
                             <div class="col-md-6 py-3">
                                 <label class="form-label">Target Currency</label>
                                 <div class="input-group input-group-outline my-1">
                                     <input type="text" class="form-control" name="name" disabled
-                                        placeholder="USD ">
+                                        placeholder="IDR ">
                                 </div>
                             </div>
                         </div>
@@ -35,7 +34,6 @@
                                 </div>
                             @endforeach
                         </div>
-
                         <div class="progress m-4">
                             <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 100%"
                                 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
