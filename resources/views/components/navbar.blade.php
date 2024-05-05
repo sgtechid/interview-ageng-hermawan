@@ -12,11 +12,14 @@
             </div>
             <ul class="navbar-nav  justify-content-end">
                 <li class="nav-item d-flex align-items-center">
+                    <i class="fa fa-user "></i>
+                    <span class="d-sm-inline text-body fs-6 font-weight-bold">&nbsp {{ Auth::user()->name }} | &nbsp;
+                    </span>
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
                         @method('post')
                         <button class="nav-link text-body font-weight-bold px-0 border-0 bg-transparent" type="submit">
-                            <i class="fa fa-user me-sm-1"></i>
+
                             <span class="d-sm-inline d-none">Logout</span>
                         </button>
                     </form>
